@@ -3,8 +3,11 @@ Aplicaciones en C para procesos e hilos
 
 # 1. Aplicacion grafica X11
 
+Crear un directorio para el proyecto
+```bash
+mkdir graficos
+```
 Crear un archivo con extension c (eg. main.c)
-
 ```bash
 touch main.c
 ```
@@ -83,8 +86,16 @@ int main() {
     return 0;
 }
 ```
+Compilar y linkear el archivo
+```bash
+gcc main.c -lX11 -lpthread -o ventana
+```
 
-Dibujar un sprite, darle un efecto al fondo de la ventana y agregar eventos...
+### Agregar:
+- [ ] Un sprite en la pantalla.
+- [ ] Darle un efecto dinámico al fondo de la ventana.
+- [ ] Capturar y procesar eventos del teclado.
+
 
 # 2. Aplicacion de un juego de punteria utilizando dos hilos (fisica y render)
 
