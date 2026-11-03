@@ -23,8 +23,10 @@ Para este tutorial se utilizara el protocolo X11 para comunicar las aplicaciones
 #include <time.h>
 
 ....
-//Llamando a X11
-Display *display = XOpenDisplay(NULL);
+
+void* hilo_render(void* arg) {
+    // llamando a X11
+    Display *display = XOpenDisplay(NULL);
     if (!display) {
         fprintf(stderr, "Error al conectar con X11.\n");
         exit(1);
@@ -40,19 +42,17 @@ Display *display = XOpenDisplay(NULL);
                  | ButtonPressMask);
     
     XMapWindow(display, ventana);
-
+    
     XImage *x_image = XCreateImage(display, DefaultVisual(display, pantalla), 
                                    DefaultDepth(display, pantalla), ZPixmap, 0, 
                                    (char*)buffer_pixeles, ANCHO, ALTO, 32, 0);
     GC gc = DefaultGC(display, pantalla);
+    ....
 ```
 
 Compilar y linkear el archivo
 ```bash
-gcc main.c -lX11 -lpthread -o ventana
-```
-
-Compilar y linkear
 gcc main.c -lX11 -lpthread -o juego_simple
+```
 
 
