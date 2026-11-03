@@ -1,7 +1,7 @@
 # Aplicaciones-de-Procesos-e-Hilos
 Aplicacion de un juego basico utilizando hilos y X11 en C
 
-# 1. Aplicacion grafica X11
+# Aplicacion grafica con X11
 
 Crear un directorio para el proyecto
 ```bash
@@ -19,6 +19,8 @@ Para este tutorial se utilizara el protocolo X11 para comunicar las aplicaciones
 #include <stdlib.h>
 #include <stdint.h>
 #include <unistd.h>
+#include <pthread.h>
+#include <time.h>
 
 ....
 //Llamando a X11
